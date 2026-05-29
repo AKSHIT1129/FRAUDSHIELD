@@ -1,5 +1,4 @@
 import mongoose from 'mongoose';
-
 const fraudAlertSchema = new mongoose.Schema({
   transactionId: { type: mongoose.Schema.Types.ObjectId, ref: 'Transaction' },
   riskScore: { type: Number, required: true },
@@ -7,5 +6,4 @@ const fraudAlertSchema = new mongoose.Schema({
   actionTaken: { type: String, default: 'Alerted' },
   date: { type: Date, default: Date.now }
 });
-
 export default mongoose.model('FraudAlert', fraudAlertSchema);
